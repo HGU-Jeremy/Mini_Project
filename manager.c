@@ -46,7 +46,7 @@ int loadData(Product *p[]){
     return i;
 } // FILE 불러오기
 
-void searchProduct(Product *p[], int count)
+void searchProduct(Product *p[], int count){
     int scnt = 0;
     char search[20];
 
@@ -63,4 +63,49 @@ void searchProduct(Product *p[], int count)
             readProduct(*p[i]);
             scnt++;
         }
+    }
+}
 
+void searchPrice(Product *p[], int count){
+    int scnt = 0;
+    int search;
+
+    printf("검색할 무게? ");
+    scanf("%d", &search);
+
+    printf("\nNo	    Name Description Weight Price Delivery\n");
+    printf("================================================\n");
+    for(int i = 0; i < count; i++){
+        //if(s[i]->price == -1) continue;
+        if(p[i] == NULL) continue;
+        if(p[i]->price == search){
+            printf("%2d ", i+1);
+            readProduct(*p[i]);
+            scnt++;
+        }
+    }
+    if(scnt == 0) printf("=> 검색된 데이터 없음!");
+    printf("\n");
+} // 저장되있는 제품 가격 검색
+
+void searchCheck(Product *p[], int count){
+    int scnt = 0;
+    int search;
+
+    printf("검색할 가격? ");
+    scanf("%d", &search);
+
+    printf("\nNo	    Name Description Weight Price Delivery\n");
+    printf("================================================\n");
+    for(int i = 0; i < count; i++){
+        //if(s[i]->price == -1) continue;
+        if(p[i] == NULL) continue;
+        if(p[i]->check == search){
+            printf("%2d ", i+1);
+            readProduct(*p[i]);
+            scnt++;
+        }
+    }
+    if(scnt == 0) printf("=> 검색된 데이터 없음!");
+    printf("\n");
+} // 저장되있는 배송방법 검색
