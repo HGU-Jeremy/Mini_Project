@@ -10,3 +10,7 @@ void saveData(Product *p[], int count){
         fprintf(fp, "%s\t %s\t %s\t %d %d\n", p[i]->name, p[i]->desc, p[i]->weight, p[i]->price, p[i]->check);
     }
 
+    fclose(fp);
+    printf("=> 저장됨! ");
+} // FILE 저장
+
