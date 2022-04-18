@@ -20,3 +20,8 @@ int loadData(Product *p[]){
     FILE *fp;
     fp = fopen("product.txt", "rt");
 
+    if (fp == NULL){
+        printf("=> 파일 없음\n");
+        return 0;
+    }
+
