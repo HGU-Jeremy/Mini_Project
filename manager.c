@@ -47,3 +47,20 @@ int loadData(Product *p[]){
 } // FILE 불러오기
 
 void searchProduct(Product *p[], int count)
+    int scnt = 0;
+    char search[20];
+
+    printf("검색할 이름? ");
+    scanf("%s", search);
+
+    printf("\nNo            Name Description Weight Price Delivery\n");
+    printf("================================================\n");
+    for(int i = 0; i < count; i++){
+        //if(s[i]->price == -1) continue;
+        if(p[i] == NULL) continue;
+        if(strstr(p[i]->name, search)){
+            printf("%2d ", i+1);
+            readProduct(*p[i]);
+            scnt++;
+        }
+
