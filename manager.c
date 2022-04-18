@@ -14,3 +14,9 @@ void saveData(Product *p[], int count){
     printf("=> 저장됨! ");
 } // FILE 저장
 
+
+int loadData(Product *p[]){
+    int i = 0;
+    FILE *fp;
+    fp = fopen("product.txt", "rt");
+
