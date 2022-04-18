@@ -46,3 +46,4 @@ int loadData(Product *p[]){
     return i;
 } // FILE 불러오기
 
+void searchProduct(Product *p[], int count)
