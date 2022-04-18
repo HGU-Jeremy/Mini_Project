@@ -25,3 +25,24 @@ int loadData(Product *p[]){
         return 0;
     }
 
+    for(; i < 100; i++){
+        p[i] = (Product *)malloc(sizeof(Product));
+        //if(feof(fp)) break;
+        //if(s[i] == NULL) fclose(fp); break;
+        fscanf(fp, "%[^\t]\t", p[i]->name);
+        fscanf(fp, "%[^\t]\t", p[i]->desc);
+        fscanf(fp, "%[^\t]\t", p[i]->weight);
+
+        if(feof(fp)) break;
+
+
+
+        fscanf(fp, "%d", &p[i]->price);
+        fscanf(fp, "%d\n", &p[i]->check);
+
+    }
+    fclose(fp);
+    printf("=> 로딩 성공!\n");
+    return i;
+} // FILE 불러오기
+
