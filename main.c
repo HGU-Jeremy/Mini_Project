@@ -64,7 +64,17 @@ int main(void){
         }
 
         else if(menu == 6){
-            searchProduct(p, index);
+            printf("무엇을 검색하시겠습니까?\n");
+            printf("1. 이름\n");
+            printf("2. 가격\n");
+            printf("3. 배송방법\n");
+            printf("\n=> 원하는 옵션은? ");
+            int search;
+            scanf("%d", &search);
+            
+            if (search == 1) searchProduct(p, index);
+            else if (search == 2) searchPrice(p, index);
+            else if (search == 3) searchCheck(p, index);
         }
     }
     return 0;
